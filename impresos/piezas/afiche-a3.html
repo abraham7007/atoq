@@ -1,0 +1,82 @@
+<!doctype html><html lang="es-PE"><head><meta charset="utf-8">
+<title>atoqlab · Afiche A3</title>
+<link rel="stylesheet" href="print.css">
+<style>
+  @page{size:303mm 426mm;margin:0}
+  .pieza{--w:297mm;--h:420mm}
+  .zorro{width:250mm;right:-84mm;top:150mm}
+  .cabecera{display:flex;justify-content:space-between;align-items:flex-start}
+  .cabecera img{width:66mm}
+  h1{font-size:66pt;max-width:230mm;margin-top:18mm}
+  .lead{font-size:13pt;margin-top:8mm;max-width:172mm;opacity:.88}
+
+  .tira{display:grid;grid-template-columns:repeat(3,1fr);gap:5mm;margin-top:12mm}
+  .tira .foto{aspect-ratio:92/158;border-radius:2mm}
+
+  .datos{display:grid;grid-template-columns:repeat(3,1fr);gap:8mm;margin-top:12mm}
+  .dato b{font-size:19pt}
+
+  .mats{margin-top:11mm;border-top:.4mm solid rgba(255,255,255,.28);padding-top:5mm;
+    display:flex;flex-wrap:wrap;gap:3mm 7mm}
+  .mats span{font-size:10pt;font-weight:600;opacity:.9}
+  .mats span+span::before{content:"·";margin-right:7mm;opacity:.5}
+
+  .pie{display:flex;justify-content:space-between;align-items:flex-end;gap:12mm;margin-top:auto}
+  .pastilla{font-size:14pt;padding:4mm 9mm}
+  .qr img{width:28mm;height:28mm}
+  .qr p{font-size:10.2pt;color:#fff;opacity:.85}
+  .contacto{text-align:right;font-size:10pt;line-height:1.55;font-weight:600;opacity:.85}
+  .contacto b{font-size:17pt;display:block;opacity:1;margin-bottom:1mm}
+</style></head><body>
+
+<section class="pieza pieza--navy">
+  <img class="zorro" src="../../logos/svg/atoqlab-isotipo-solido-blanco.svg" alt="">
+  <div class="filete" style="height:7mm"></div>
+  <div class="seguro">
+
+    <header class="cabecera">
+      <img src="../../logos/svg/atoqlab-horizontal-blanco.svg" alt="atoqlab">
+      <p class="eyebrow eyebrow--claro">Santiago de Surco · Lima</p>
+    </header>
+
+    <h1>Habilitado y conformado de plancha metálica.</h1>
+    <p class="lead">Cortamos en la láser DXTECH y conformamos en prensa de 130 toneladas. La
+    pieza no cambia de taller entre una operación y la otra, que es donde se
+    pierden los días y aparecen las diferencias de milímetros.</p>
+
+    <div class="tira">
+      <div class="foto"><img src="../fotos/laser-dxtech.jpg" alt=""></div>
+      <div class="foto"><img src="../fotos/plancha-perforada.jpg" alt=""></div>
+      <div class="foto"><img src="../fotos/encofrados-fila.jpg" alt=""></div>
+    </div>
+
+    <div class="datos">
+      <div class="dato"><b>Hasta 20 mm</b><span>Espesor de plancha</span></div>
+      <div class="dato"><b>3200 mm</b><span>Longitud de plegado</span></div>
+      <div class="dato"><b>24 horas</b><span>Cotización</span></div>
+    </div>
+
+    <div class="mats">
+      <span>Acero al carbono</span><span>Acero inoxidable</span><span>Aluminio</span>
+      <span>Plancha galvanizada</span>
+    </div>
+
+    <div class="pie">
+      <div>
+        <span class="pastilla">Cotiza gratis</span>
+        <div class="qr" style="margin-top:8mm">
+          <img src="qr/whatsapp-blanco.svg" alt="">
+          <p>Escanea y escríbenos<br>por WhatsApp</p>
+        </div>
+      </div>
+      <div class="contacto">
+        <b>+51 999 888 777</b>
+        atoqlab.pe · contacto@atoqlab.pe<br>
+        Av. Caminos del Inca 2589, Surco<br>
+        Lun a Vie 8:00–18:00 · Sáb 8:00–13:00
+      </div>
+    </div>
+
+  </div>
+</section>
+</body></html>

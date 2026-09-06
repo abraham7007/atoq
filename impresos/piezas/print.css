@@ -1,0 +1,79 @@
+/* Sistema de impresion de atoqlab.
+   Cada pieza declara su tamaño de recorte y el sistema le suma el sangrado.
+   Unidades fisicas (mm / pt) para que lo que se ve sea lo que se imprime. */
+
+/* Pesos estaticos, no la variable: Chrome solo incrusta subconjuntos
+   TrueType si la fuente no es variable. Ver scripts/fuentes-estaticas.py */
+@font-face{font-family:Montserrat;font-weight:400;font-style:normal;
+  src:url("../fuentes/Montserrat-Regular.ttf") format("truetype")}
+@font-face{font-family:Montserrat;font-weight:500;font-style:normal;
+  src:url("../fuentes/Montserrat-Medium.ttf") format("truetype")}
+@font-face{font-family:Montserrat;font-weight:600;font-style:normal;
+  src:url("../fuentes/Montserrat-SemiBold.ttf") format("truetype")}
+@font-face{font-family:Montserrat;font-weight:700;font-style:normal;
+  src:url("../fuentes/Montserrat-Bold.ttf") format("truetype")}
+@font-face{font-family:Montserrat;font-weight:800;font-style:normal;
+  src:url("../fuentes/Montserrat-ExtraBold.ttf") format("truetype")}
+
+:root{
+  --navy:#192851; --blue:#4A70D4; --brand:#B92222; --brand-400:#D63E3E;
+  --ash:#E4E4E4; --ash-dark:#C6C6C6; --white:#fff;
+  --sangrado:3mm;        /* lo que se corta */
+  --seguro:6mm;          /* margen desde el recorte para contenido critico */
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{font-family:Montserrat,sans-serif;color:var(--navy);
+  font-variant-numeric:tabular-nums;text-rendering:geometricPrecision}
+img{display:block;max-width:100%}
+
+/* Una .pieza = una cara. Su tamaño ya incluye el sangrado por los cuatro lados. */
+.pieza{position:relative;overflow:hidden;background:#fff;
+  width:calc(var(--w) + var(--sangrado)*2);
+  height:calc(var(--h) + var(--sangrado)*2);
+  page-break-after:always;break-after:page}
+.pieza:last-child{page-break-after:auto;break-after:auto}
+.pieza--navy{background:var(--navy);color:#fff}
+.pieza--rojo{background:var(--brand);color:#fff}
+
+/* Todo lo que no puede quedarse fuera del corte vive aqui dentro. */
+.seguro{position:absolute;inset:calc(var(--sangrado) + var(--seguro));
+  display:flex;flex-direction:column}
+
+/* El zorro ampliado como textura de fondo. Vectorial: escala a cualquier tamaño. */
+.zorro{position:absolute;opacity:.07;pointer-events:none}
+.zorro--blanco{filter:brightness(0) invert(1)}
+
+/* Filete rojo inferior, el mismo recurso que usan las piezas de redes. */
+.filete{position:absolute;left:0;right:0;bottom:0;background:var(--brand)}
+
+/* ------------------------------------------------------------- tipografia */
+.eyebrow{font-size:8.8pt;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--brand)}
+.eyebrow--claro{color:#fff;opacity:.65}
+h1{font-size:42pt;line-height:1.02;font-weight:800;letter-spacing:-.02em;text-wrap:balance}
+h2{font-size:20pt;line-height:1.12;font-weight:800;letter-spacing:-.01em}
+h3{font-size:12pt;line-height:1.22;font-weight:700}
+p{font-size:10.6pt;line-height:1.5;font-weight:500}
+.lead{font-size:13.5pt;line-height:1.38;font-weight:500}
+.mini{font-size:8.8pt;line-height:1.4;font-weight:500}
+strong{font-weight:700}
+
+/* ------------------------------------------------------------- componentes */
+.pastilla{display:inline-block;background:var(--brand);color:#fff;
+  font-size:10pt;font-weight:700;padding:2.6mm 6mm;border-radius:99mm}
+.dato{border-top:.4mm solid currentColor;padding-top:2mm}
+.dato b{display:block;font-size:15pt;font-weight:800;line-height:1.1}
+.dato span{font-size:8.4pt;font-weight:600;letter-spacing:.1em;text-transform:uppercase;opacity:.7}
+
+.qr{display:flex;gap:3mm;align-items:center}
+.qr img{width:20mm;height:20mm}
+.qr p{font-size:8.8pt;line-height:1.35;font-weight:600}
+
+.foto{overflow:hidden;background:var(--ash)}
+.foto img{width:100%;height:100%;object-fit:cover}
+
+/* Guias de diagnostico: se activan con ?guias en el exportador. */
+.guias .seguro{outline:.3mm dashed rgba(255,0,255,.55)}
+.guias .pieza::after{content:"";position:absolute;
+  inset:var(--sangrado);outline:.3mm dashed rgba(0,200,255,.6);pointer-events:none}

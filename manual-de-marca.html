@@ -1,0 +1,790 @@
+<!doctype html>
+<html lang="es-PE">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>atoqlab · Manual de marca</title>
+<link rel="icon" href="logos/svg/atoqlab-favicon.svg" type="image/svg+xml" />
+<style>
+@font-face{font-family:Montserrat;font-weight:400 800;font-style:normal;font-display:swap;
+  src:url("fuentes/montserrat-latin.woff2") format("woff2");
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:Montserrat;font-weight:400 800;font-style:normal;font-display:swap;
+  src:url("fuentes/montserrat-latin-ext.woff2") format("woff2");
+  unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+
+:root{
+  --navy:#192851; --blue:#4A70D4; --brand:#B92222; --brand-400:#D63E3E;
+  --danger:#E32529; --success:#31CF6E; --ash:#E4E4E4; --ash-dark:#C6C6C6;
+  --paper:#FBFBFC; --ink:#192851; --mute:#5C6784;
+  --rail:19rem; --gut:clamp(1.5rem,5vw,4.5rem);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:2rem}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font:400 16px/1.65 Montserrat,ui-sans-serif,system-ui,sans-serif;
+  -webkit-font-smoothing:antialiased;font-variant-numeric:tabular-nums}
+img{max-width:100%;display:block}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.86em;
+  background:#fff;border:1px solid var(--ash);border-radius:4px;padding:.1em .4em}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+
+/* ------------------------------------------------------------ portada */
+.portada{min-height:100vh;background:var(--navy);color:#fff;display:grid;
+  grid-template-rows:1fr auto;padding:var(--gut);position:relative;overflow:hidden}
+.portada::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(160deg,transparent 55%,rgba(185,34,34,.30))}
+.portada__foto{position:absolute;top:0;right:0;bottom:0;width:56%;height:100%;
+  object-fit:cover;opacity:.5;
+  -webkit-mask-image:linear-gradient(to right,transparent,#000 34%);
+  mask-image:linear-gradient(to right,transparent,#000 34%)}
+.portada__centro{display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:2.5rem;position:relative;z-index:1}
+.portada__logo{width:min(26rem,68vw)}
+.portada h1{margin:0;font-size:clamp(2rem,5.5vw,3.5rem);line-height:1.08;font-weight:800;letter-spacing:-.02em}
+.portada h1 em{font-style:normal;color:#fff;opacity:.45;display:block;font-weight:500;font-size:.42em;letter-spacing:.22em;text-transform:uppercase;margin-bottom:1rem}
+.portada__pie{display:flex;flex-wrap:wrap;gap:2rem 3rem;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;opacity:.6;position:relative;z-index:1;border-top:1px solid rgba(255,255,255,.2);padding-top:1.5rem}
+
+/* ------------------------------------------------------------ layout */
+.wrap{display:grid;grid-template-columns:1fr;max-width:100rem;margin:0 auto}
+@media (min-width:64rem){.wrap{grid-template-columns:var(--rail) 1fr}}
+.rail{padding:var(--gut) 0 var(--gut) var(--gut)}
+@media (min-width:64rem){.rail{position:sticky;top:0;align-self:start;height:100vh;overflow:auto}}
+.rail__marca{width:9rem;margin-bottom:2.5rem}
+.rail nav ol{list-style:none;margin:0;padding:0;counter-reset:s}
+.rail nav a{display:flex;gap:.9rem;padding:.5rem 0;color:var(--mute);text-decoration:none;font-size:.92rem;font-weight:500;transition:color .15s}
+.rail nav a:hover{color:var(--brand)}
+.rail nav a span{color:var(--ash-dark);font-variant-numeric:tabular-nums;font-weight:600}
+.contenido{padding:var(--gut);min-width:0}
+
+section{padding-block:clamp(3rem,7vw,6rem);border-top:1px solid var(--ash)}
+section:first-child{border-top:0;padding-top:0}
+.sec__cab{display:contents}
+.sec__num{font-size:.75rem;letter-spacing:.24em;font-weight:700;color:var(--brand);text-transform:uppercase}
+h2{font-size:clamp(1.75rem,3.6vw,2.5rem);line-height:1.12;font-weight:800;letter-spacing:-.015em;margin:.6rem 0 1.25rem}
+h3{font-size:1.125rem;font-weight:700;margin:0 0 .4rem}
+h4{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mute);font-weight:700;margin:0 0 1rem}
+p{margin:0 0 1rem;max-width:60ch;color:#2C3A5C}
+.lead{font-size:1.15rem;line-height:1.6;color:var(--ink);max-width:56ch}
+.nota{font-size:.9rem;color:var(--mute)}
+hr{border:0;border-top:1px solid var(--ash);margin:3rem 0}
+
+.bloque{margin-top:3rem}
+.grid{display:grid;gap:1.5rem}
+@media (min-width:48rem){.g2{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:repeat(3,1fr)}}
+
+/* ------------------------------------------------------------ logo */
+.marco{background:#fff;border:1px solid var(--ash);border-radius:14px;padding:2rem;display:grid;place-items:center;min-height:9rem}
+.marco--navy{background:var(--navy);border-color:var(--navy)}
+.marco--rojo{background:var(--brand);border-color:var(--brand)}
+.marco--gris{background:var(--ash);border-color:var(--ash-dark)}
+.marco img{width:min(100%,17rem)}
+.marco--iso img{width:min(100%,5.5rem)}
+.pie{font-size:.78rem;color:var(--mute);margin:.7rem 0 0;letter-spacing:.04em}
+
+.resguardo{--h:5rem;position:relative;background:#fff;border-radius:6px;
+  display:inline-grid;place-items:center;padding:calc(var(--h)/2)}
+.resguardo::before{content:"";position:absolute;inset:0;border:1.5px dashed var(--brand);border-radius:6px}
+.resguardo::after{content:"";position:absolute;inset:calc(var(--h)/2);border:1px solid var(--ash-dark)}
+.resguardo img{height:var(--h);width:auto;position:relative}
+.medida{display:inline-flex;align-items:center;gap:.5rem;font-size:.8rem;color:var(--brand);font-weight:700;margin-top:.9rem}
+.medida i{display:block;width:1.4rem;height:1.4rem;border:1px dashed var(--brand);border-radius:3px;font-style:normal;text-align:center;line-height:1.3rem;font-size:.7rem}
+
+.minimos{display:flex;flex-wrap:wrap;gap:2.5rem;align-items:flex-end;background:#fff;border:1px solid var(--ash);border-radius:14px;padding:2rem}
+.minimos figure{margin:0}
+.minimos figcaption{font-size:.72rem;color:var(--mute);margin-top:.7rem;letter-spacing:.05em}
+
+.mal{background:#fff;border:1px solid var(--ash);border-radius:14px;padding:1.5rem;position:relative;display:grid;place-items:center;min-height:8rem;overflow:hidden}
+.mal::after{content:"✕";position:absolute;top:.6rem;right:.8rem;color:var(--danger);font-weight:800;font-size:1.1rem}
+.mal img{width:min(100%,11rem)}
+.mal--estira img{transform:scaleX(1.5)}
+.mal--rota img{transform:rotate(-9deg)}
+.mal--color img{filter:hue-rotate(115deg) saturate(1.6)}
+.mal--sombra img{filter:drop-shadow(3px 4px 3px rgba(0,0,0,.55))}
+.mal--foto{background:linear-gradient(115deg,#7a8290,#3d4450 55%,#8d7a63)}
+.mal--apreta img{transform:scaleY(1.55)}
+
+/* ------------------------------------------------------------ color */
+.swatch{background:#fff;border:1px solid var(--ash);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.swatch__chip{height:7rem}
+.swatch__chip--borde{box-shadow:inset 0 0 0 1px var(--ash-dark)}
+.swatch__datos{padding:1.1rem 1.25rem 1.35rem}
+.swatch__uso{font-size:.85rem;color:var(--mute);margin:.2rem 0 1rem;max-width:none}
+.swatch dl{margin:0;display:grid;gap:.3rem;font-size:.8rem}
+.swatch dl div{display:flex;justify-content:space-between;gap:1rem;border-top:1px solid var(--ash);padding-top:.3rem}
+.swatch dt{color:var(--mute);letter-spacing:.08em}
+.swatch dd{margin:0;font-weight:600;font-variant-numeric:tabular-nums}
+
+table{width:100%;border-collapse:collapse;font-size:.88rem;background:#fff;border:1px solid var(--ash);border-radius:14px;overflow:hidden}
+th,td{text-align:left;padding:.75rem 1rem;border-top:1px solid var(--ash)}
+thead th{border-top:0;background:#F5F6F8;font-size:.72rem;letter-spacing:.13em;text-transform:uppercase;color:var(--mute);font-weight:700}
+td.num{font-variant-numeric:tabular-nums;font-weight:700}
+.pill{display:inline-block;padding:.15rem .6rem;border-radius:999px;font-size:.72rem;font-weight:700;letter-spacing:.04em}
+.pill--ok{background:#E3F7EC;color:#137A43}
+.pill--aviso{background:#FFF3DB;color:#8A5B00}
+.pill--falla{background:#FCE4E4;color:#9C1414}
+.tabla-scroll{overflow-x:auto}
+
+/* ------------------------------------------------------------ tipografia */
+.espec{background:#fff;border:1px solid var(--ash);border-radius:14px;padding:2rem}
+.espec__abc{font-size:clamp(1.6rem,4.5vw,2.6rem);line-height:1.25;letter-spacing:-.01em;word-break:break-word;margin:0 0 1.5rem;max-width:none}
+.pesos{display:grid;gap:.9rem;margin:0}
+.pesos div{display:flex;flex-wrap:wrap;align-items:baseline;gap:1rem;border-top:1px solid var(--ash);padding-top:.9rem}
+.pesos dt{font-size:.72rem;letter-spacing:.13em;text-transform:uppercase;color:var(--mute);min-width:9rem;font-weight:700}
+.pesos dd{margin:0;font-size:1.4rem}
+.escala div{display:flex;flex-wrap:wrap;align-items:baseline;gap:1.25rem;border-top:1px solid var(--ash);padding:.85rem 0}
+.escala b{min-width:11rem;font-size:.72rem;letter-spacing:.13em;text-transform:uppercase;color:var(--mute)}
+.escala span{color:var(--ink)}
+
+/* ------------------------------------------------------------ redes */
+.pieza{background:#fff;border:1px solid var(--ash);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.pieza>img{width:100%;background:var(--ash);object-fit:cover;max-height:13rem}
+.pieza__datos{padding:1.1rem 1.25rem 1.4rem}
+.pieza__donde{font-size:.78rem;color:var(--mute);margin:.15rem 0 .55rem}
+.pieza__medida{font-weight:700;font-size:.92rem;margin:0 0 .55rem;color:var(--brand)}
+.pieza__nota{font-size:.84rem;color:var(--mute);margin:0;max-width:none}
+
+/* ------------------------------------------------------------ archivos */
+.arbol{background:var(--navy);color:#DCE3F2;border-radius:14px;padding:1.75rem;overflow-x:auto;
+  white-space:pre;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.82rem;line-height:1.85}
+.arbol b{color:#fff;font-weight:600}
+.arbol i{color:#8FA3CE;font-style:normal}
+
+footer{background:var(--navy);color:#fff;padding:var(--gut);margin-top:4rem}
+footer img{width:11rem;margin-bottom:1.5rem}
+footer p{color:rgba(255,255,255,.65);font-size:.85rem;max-width:52ch}
+
+/* ------------------------------------------------------------ impresion */
+/* ---------------------------------------------- impresion (A4 horizontal)
+   El PDF va apaisado: 269 x 182 mm utiles. Se aprovecha el ancho con un rail
+   de titulo a la izquierda y el contenido en columnas a la derecha.          */
+@media print{
+  :root{--gut:0}
+  @page{size:A4 landscape;margin:14mm}
+  body{background:#fff;font-size:10.4pt;line-height:1.55}
+  .rail{display:none}
+  .wrap{display:block}
+  .contenido{padding:0}
+  a{text-decoration:none;color:inherit}
+  p{max-width:none}
+
+  /* --- portada --- */
+  .portada{height:180mm;padding:0;break-after:page;break-inside:avoid;
+    display:grid;grid-template-rows:1fr auto;background:var(--navy);position:relative}
+  .portada__centro{gap:12mm;padding-left:18mm;max-width:150mm}
+  .portada__logo{width:82mm}
+  .portada h1{font-size:33pt}
+  .portada h1 em{font-size:.34em;margin-bottom:6mm}
+  .portada__pie{padding:0 18mm 14mm;border-top:none;position:relative;z-index:1;
+    align-self:end;gap:14mm;font-size:7.6pt}
+
+  /* --- flujo continuo, con rail de titulo ---
+     Nada de salto de pagina por seccion: dejaba media hoja en blanco al final
+     de cada una, y el rail vacio en las paginas de continuacion. */
+  /* El rail va flotado, no en grid: una fila de grid no se puede partir entre
+     paginas en Chrome, asi que la primera fila de cada seccion (rail + primer
+     bloque) saltaba entera y dejaba media hoja en blanco. */
+  section{break-before:auto;break-inside:auto;padding:8mm 0 0;margin-top:8mm;
+    border-top:.3mm solid var(--ash);display:block}
+  section:first-of-type{margin-top:0;padding-top:0;border-top:0}
+  section::after{content:"";display:block;clear:both}
+  .sec__cab{display:block;float:left;width:60mm;margin:0 12mm 7mm 0}
+  .sec__num{font-size:7.6pt}
+  h2{font-size:21pt;margin:2.5mm 0 4.5mm}
+  .lead{font-size:11pt;line-height:1.45}
+  h3{font-size:11pt}
+  h4{font-size:7.6pt;margin-bottom:3.2mm}
+  .nota,.pie,.mini{font-size:8.8pt}
+  .bloque{margin-top:6mm}
+  hr{margin:7mm 0}
+
+  /* --- rejillas: la anchura da para mas columnas --- */
+  .g2{grid-template-columns:repeat(2,1fr) !important}
+  .g3{grid-template-columns:repeat(3,1fr) !important}
+  #redes .grid.g2{grid-template-columns:repeat(3,1fr) !important}
+  #archivos .grid.g2{grid-template-columns:repeat(2,1fr) !important}
+  .grid{gap:4.5mm !important}
+
+  /* --- compactar los componentes --- */
+  .marco{min-height:0;padding:5mm;border-radius:2mm}
+  .marco img{width:min(100%,44mm)}
+  .marco--iso img{width:min(100%,14mm)}
+  .swatch{border-radius:2mm}
+  .swatch__chip{height:16mm}
+  .swatch__datos{padding:3mm 3.5mm 4mm}
+  .swatch h3{font-size:10.6pt}
+  .swatch__uso{font-size:8.4pt;margin:.8mm 0 3mm}
+  .swatch dl{font-size:8pt;gap:.9mm}
+  .swatch dl div{padding-top:1.1mm}
+  table{font-size:8.8pt;border-radius:2mm}
+  th,td{padding:1.9mm 2.8mm}
+  .espec{padding:6mm;border-radius:2mm}
+  .espec__abc{font-size:22pt;margin-bottom:6mm}
+  .pesos{gap:2mm}
+  .pesos dt{font-size:7.4pt;min-width:29mm}
+  .pesos dd{font-size:14pt}
+  .escala div{padding:2mm 0;gap:6mm}
+  .escala b{min-width:37mm;font-size:7.4pt}
+  .pieza{border-radius:2mm}
+  .pieza>img{max-height:30mm}
+  .pieza__datos{padding:3mm 3.5mm 4mm}
+  .pieza__donde,.pieza__nota{font-size:8pt}
+  .pieza__medida{font-size:9.4pt;margin-bottom:1.8mm}
+  .mal{min-height:0;padding:4mm;border-radius:2mm}
+  .mal img{width:min(100%,40mm)}
+  .resguardo{--h:20mm}
+  .minimos{padding:6mm;gap:10mm;border-radius:2mm}
+  .arbol{padding:6mm;font-size:7.8pt;line-height:1.75;border-radius:2mm}
+  footer{padding:9mm 14mm;margin-top:8mm;break-inside:avoid;clear:both}
+  footer img{width:38mm;margin-bottom:5mm}
+  footer p{font-size:8.4pt}
+
+  /* --- que nada se parta por la mitad --- */
+  .marco,.swatch,.pieza,.arbol,.resguardo,.minimos,.mal,tr,figure{break-inside:avoid}
+  .espec{break-inside:auto}
+  .pesos div,.escala div{break-inside:avoid}
+  h2,h3,h4{break-after:avoid}
+  p,li{orphans:3;widows:3}
+}
+</style>
+</head>
+<body>
+
+<header class="portada">
+  <img class="portada__foto" src="impresos/fotos/laser-dxtech.jpg" alt="" />
+  <div class="portada__centro">
+    <img class="portada__logo" src="logos/svg/atoqlab-vertical-blanco.svg" alt="atoqlab" />
+    <h1><em>Manual de marca</em>Cómo se usa la identidad de atoqlab.</h1>
+  </div>
+  <div class="portada__pie">
+    <span>Versión 1.0 preliminar</span>
+    <span>06.09.2026</span>
+    <span>Corte láser y plegado · Lima, Perú</span>
+  </div>
+</header>
+
+<div class="wrap">
+  <aside class="rail">
+    <img class="rail__marca" src="logos/svg/atoqlab-horizontal-color.svg" alt="atoqlab" />
+    <nav aria-label="Contenido">
+      <ol>
+        <li><a href="#marca"><span>01</span> La marca</a></li>
+        <li><a href="#logotipo"><span>02</span> Logotipo</a></li>
+        <li><a href="#color"><span>03</span> Color</a></li>
+        <li><a href="#tipografia"><span>04</span> Tipografía</a></li>
+        <li><a href="#redes"><span>05</span> Redes sociales</a></li>
+        <li><a href="#archivos"><span>06</span> Archivos</a></li>
+      </ol>
+    </nav>
+  </aside>
+
+  <main class="contenido">
+
+  <!-- ============================================ 01 -->
+  <section id="marca">
+    <header class="sec__cab">
+      <p class="sec__num">01 · La marca</p>
+      <h2>Un zorro cortado a láser</h2>
+      <p class="lead"><strong>Atoq</strong> es «zorro» en quechua. En la tradición andina el zorro
+    es el animal astuto, el que resuelve. De ahí sale el nombre y de ahí sale la marca.</p>
+    </header>
+    <p>El isotipo es una cabeza de zorro construida solo con planos rectos, como una pieza
+    troquelada. La raja que la parte por la mitad no es decorativa: es el <strong>kerf</strong>,
+    el ancho de material que el láser consume al cortar. Es la huella exacta que deja la
+    máquina, y va vacía a propósito — deja ver el fondo que tenga debajo, sea el que sea.</p>
+    <div class="grid g2 bloque">
+      <div><div class="marco"><img src="logos/svg/atoqlab-isotipo-color.svg" alt="Isotipo a dos tintas" style="width:min(100%,8rem)" /></div>
+        <p class="pie">Sobre fondo claro, el kerf deja pasar el blanco.</p></div>
+      <div><div class="marco marco--rojo"><img src="logos/svg/atoqlab-isotipo-blanco.svg" alt="Isotipo en blanco sobre rojo" style="width:min(100%,8rem)" /></div>
+        <p class="pie">Sobre color, el kerf deja pasar el color.</p></div>
+    </div>
+    <div class="bloque">
+      <h4>Atributos</h4>
+      <div class="grid g3">
+        <div><h3>Preciso</h3><p class="nota">El negocio se mide en milímetros. La comunicación tampoco debería aproximar: si no sabemos un dato, no lo escribimos.</p></div>
+        <div><h3>Directo</h3><p class="nota">Se dice el precio, el plazo y lo que entra en él.</p></div>
+        <div><h3>Industrial</h3><p class="nota">El registro es de taller. Nada de «soluciones integrales» ni de adjetivos que no sostiene una cifra o una foto.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ 02 -->
+  <section id="logotipo">
+    <header class="sec__cab">
+      <p class="sec__num">02 · Logotipo</p>
+      <h2>Versiones y uso</h2>
+      <p class="lead">Cuatro versiones. Se elige por el espacio disponible, nunca por gusto.</p>
+    </header>
+
+    <div class="grid g2 bloque">
+      <div><div class="marco"><img src="logos/svg/atoqlab-horizontal-color.svg" alt="Versión horizontal" /></div>
+        <p class="pie"><strong>Horizontal.</strong> La principal. Cabeceras web, papelería, firmas de correo.</p></div>
+      <div><div class="marco"><img src="logos/svg/atoqlab-compacto-color.svg" alt="Versión compacta" /></div>
+        <p class="pie"><strong>Compacta, sin bajada.</strong> Cuando el logo mide menos de 120 px de ancho.</p></div>
+      <div><div class="marco"><img src="logos/svg/atoqlab-vertical-color.svg" alt="Versión vertical" style="width:min(100%,10rem)" /></div>
+        <p class="pie"><strong>Vertical.</strong> Espacios cuadrados: posts, sellos, señalética.</p></div>
+      <div><div class="marco marco--iso"><img src="logos/svg/atoqlab-isotipo-color.svg" alt="Isotipo suelto" /></div>
+        <p class="pie"><strong>Isotipo.</strong> Solo cuando la marca ya se identificó: avatares, favicon, marcaje de piezas.</p></div>
+    </div>
+
+    <div class="bloque">
+      <h4>Variantes de color</h4>
+      <div class="grid g3">
+        <div><div class="marco"><img src="logos/svg/atoqlab-horizontal-color.svg" alt="Dos tintas" /></div><p class="pie">Dos tintas · fondo claro</p></div>
+        <div><div class="marco marco--navy"><img src="logos/svg/atoqlab-horizontal-blanco.svg" alt="Blanco" /></div><p class="pie">Blanco · fondo azul</p></div>
+        <div><div class="marco marco--rojo"><img src="logos/svg/atoqlab-horizontal-blanco.svg" alt="Blanco sobre rojo" /></div><p class="pie">Blanco · fondo rojo</p></div>
+        <div><div class="marco marco--gris"><img src="logos/svg/atoqlab-horizontal-azul.svg" alt="Azul monocromo" /></div><p class="pie">Azul monocromo · una tinta</p></div>
+        <div><div class="marco"><img src="logos/svg/atoqlab-horizontal-negro.svg" alt="Negro" /></div><p class="pie">Negro · documentos y fax</p></div>
+        <div><div class="marco marco--gris"><img src="logos/svg/atoqlab-isotipo-solido-navy.svg" alt="Isotipo sólido" style="width:min(100%,4.5rem)" /></div><p class="pie">Sólido, sin kerf · grabado, bordado, sellos</p></div>
+      </div>
+      <p class="nota bloque">La versión sólida existe porque el kerf mide décimas de milímetro: en
+      grabado láser sobre metal, en bordado o en un sello de caucho se cierra solo y ensucia la
+      figura. En esos soportes se usa la silueta cerrada.</p>
+    </div>
+
+    <div class="bloque">
+      <h4>Área de resguardo</h4>
+      <p>Nada puede invadir el perímetro del logo: ni texto, ni imágenes, ni el borde del soporte.
+      La medida es <strong>x = la mitad de la altura del isotipo</strong>, y se aplica por los cuatro lados.</p>
+      <div class="resguardo"><img src="logos/svg/atoqlab-horizontal-color.svg" alt="Área de resguardo" /></div>
+      <p class="medida"><i>x</i> = altura del isotipo ÷ 2</p>
+    </div>
+
+    <div class="bloque">
+      <h4>Tamaño mínimo</h4>
+      <p>Por debajo de estas medidas la bajada se empasta y el kerf desaparece.</p>
+      <div class="minimos">
+        <figure><img src="logos/svg/atoqlab-horizontal-color.svg" alt="Horizontal al mínimo" style="width:180px" /><figcaption>Horizontal · 180 px / 45 mm</figcaption></figure>
+        <figure><img src="logos/svg/atoqlab-compacto-color.svg" alt="Compacta al mínimo" style="width:120px" /><figcaption>Compacta · 120 px / 30 mm</figcaption></figure>
+        <figure><img src="logos/svg/atoqlab-isotipo-color.svg" alt="Isotipo al mínimo" style="width:20px" /><figcaption>Isotipo · 20 px / 6 mm</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="bloque">
+      <h4>Lo que no se hace</h4>
+      <div class="grid g3">
+        <div><div class="mal mal--estira"><img src="logos/svg/atoqlab-horizontal-color.svg" alt="" /></div><p class="pie">Deformar la proporción</p></div>
+        <div><div class="mal mal--apreta"><img src="logos/svg/atoqlab-horizontal-color.svg" alt="" /></div><p class="pie">Comprimir en vertical</p></div>
+        <div><div class="mal mal--rota"><img src="logos/svg/atoqlab-horizontal-color.svg" alt="" /></div><p class="pie">Rotar o inclinar</p></div>
+        <div><div class="mal mal--color"><img src="logos/svg/atoqlab-horizontal-color.svg" alt="" /></div><p class="pie">Recolorear fuera de la paleta</p></div>
+        <div><div class="mal mal--sombra"><img src="logos/svg/atoqlab-horizontal-color.svg" alt="" /></div><p class="pie">Añadir sombras, brillos o contornos</p></div>
+        <div><div class="mal mal--foto"><img src="logos/svg/atoqlab-horizontal-color.svg" alt="" /></div><p class="pie">Colocarlo sobre una foto sin contraste</p></div>
+      </div>
+      <p class="nota bloque">Sobre fotografía se usa siempre la versión blanca, y si la imagen es
+      clara o tiene mucho detalle, se le aplica antes un velo oscuro que garantice el contraste.</p>
+    </div>
+  </section>
+
+  <!-- ============================================ 03 -->
+  <section id="color">
+    <header class="sec__cab">
+      <p class="sec__num">03 · Color</p>
+      <h2>Paleta</h2>
+      <p class="lead">Azul marino y rojo atoq cargan la identidad. El resto son colores de apoyo
+    y de estado: no lideran una pieza.</p>
+    </header>
+    <div class="grid g3 bloque">
+        <article class="swatch">
+          <div class="swatch__chip" style="background:#192851"></div>
+          <div class="swatch__datos">
+            <h3>Azul marino</h3>
+            <p class="swatch__uso">Color principal. Titulares, texto y fondos sólidos.</p>
+            <dl>
+              <div><dt>HEX</dt><dd>#192851</dd></div>
+              <div><dt>RGB</dt><dd>25 40 81</dd></div>
+              <div><dt>CMYK</dt><dd>69 51 0 68</dd></div>
+              <div><dt>Token</dt><dd><code>--color-navy</code></dd></div>
+            </dl>
+          </div>
+        </article>
+        <article class="swatch">
+          <div class="swatch__chip" style="background:#4A70D4"></div>
+          <div class="swatch__datos">
+            <h3>Azul soporte</h3>
+            <p class="swatch__uso">Acentos, degradados, estado de foco. No usar para texto pequeño sobre blanco.</p>
+            <dl>
+              <div><dt>HEX</dt><dd>#4A70D4</dd></div>
+              <div><dt>RGB</dt><dd>74 112 212</dd></div>
+              <div><dt>CMYK</dt><dd>65 47 0 17</dd></div>
+              <div><dt>Token</dt><dd><code>--color-blue</code></dd></div>
+            </dl>
+          </div>
+        </article>
+        <article class="swatch">
+          <div class="swatch__chip" style="background:#B92222"></div>
+          <div class="swatch__datos">
+            <h3>Rojo atoq</h3>
+            <p class="swatch__uso">Color de acción: botones, enlaces destacados, footer.</p>
+            <dl>
+              <div><dt>HEX</dt><dd>#B92222</dd></div>
+              <div><dt>RGB</dt><dd>185 34 34</dd></div>
+              <div><dt>CMYK</dt><dd>0 82 82 27</dd></div>
+              <div><dt>Token</dt><dd><code>--color-brand</code></dd></div>
+            </dl>
+          </div>
+        </article>
+        <article class="swatch">
+          <div class="swatch__chip" style="background:#D63E3E"></div>
+          <div class="swatch__datos">
+            <h3>Rojo claro</h3>
+            <p class="swatch__uso">Estado hover del rojo atoq. Solo interacción.</p>
+            <dl>
+              <div><dt>HEX</dt><dd>#D63E3E</dd></div>
+              <div><dt>RGB</dt><dd>214 62 62</dd></div>
+              <div><dt>CMYK</dt><dd>0 71 71 16</dd></div>
+              <div><dt>Token</dt><dd><code>--color-brand-400</code></dd></div>
+            </dl>
+          </div>
+        </article>
+        <article class="swatch">
+          <div class="swatch__chip" style="background:#E32529"></div>
+          <div class="swatch__datos">
+            <h3>Error</h3>
+            <p class="swatch__uso">Mensajes de error y validación.</p>
+            <dl>
+              <div><dt>HEX</dt><dd>#E32529</dd></div>
+              <div><dt>RGB</dt><dd>227 37 41</dd></div>
+              <div><dt>CMYK</dt><dd>0 84 82 11</dd></div>
+              <div><dt>Token</dt><dd><code>--color-danger</code></dd></div>
+            </dl>
+          </div>
+        </article>
+        <article class="swatch">
+          <div class="swatch__chip swatch__chip--borde" style="background:#31CF6E"></div>
+          <div class="swatch__datos">
+            <h3>Éxito</h3>
+            <p class="swatch__uso">Confirmaciones y estados correctos.</p>
+            <dl>
+              <div><dt>HEX</dt><dd>#31CF6E</dd></div>
+              <div><dt>RGB</dt><dd>49 207 110</dd></div>
+              <div><dt>CMYK</dt><dd>76 0 47 19</dd></div>
+              <div><dt>Token</dt><dd><code>--color-success</code></dd></div>
+            </dl>
+          </div>
+        </article>
+        <article class="swatch">
+          <div class="swatch__chip swatch__chip--borde" style="background:#E4E4E4"></div>
+          <div class="swatch__datos">
+            <h3>Gris fondo</h3>
+            <p class="swatch__uso">Fondos alternos y separadores suaves.</p>
+            <dl>
+              <div><dt>HEX</dt><dd>#E4E4E4</dd></div>
+              <div><dt>RGB</dt><dd>228 228 228</dd></div>
+              <div><dt>CMYK</dt><dd>0 0 0 11</dd></div>
+              <div><dt>Token</dt><dd><code>--color-ash</code></dd></div>
+            </dl>
+          </div>
+        </article>
+        <article class="swatch">
+          <div class="swatch__chip swatch__chip--borde" style="background:#C6C6C6"></div>
+          <div class="swatch__datos">
+            <h3>Gris borde</h3>
+            <p class="swatch__uso">Bordes y líneas divisorias.</p>
+            <dl>
+              <div><dt>HEX</dt><dd>#C6C6C6</dd></div>
+              <div><dt>RGB</dt><dd>198 198 198</dd></div>
+              <div><dt>CMYK</dt><dd>0 0 0 22</dd></div>
+              <div><dt>Token</dt><dd><code>--color-ash-dark</code></dd></div>
+            </dl>
+          </div>
+        </article>
+        <article class="swatch">
+          <div class="swatch__chip swatch__chip--borde" style="background:#FFFFFF"></div>
+          <div class="swatch__datos">
+            <h3>Blanco</h3>
+            <p class="swatch__uso">Fondo base y texto sobre color sólido.</p>
+            <dl>
+              <div><dt>HEX</dt><dd>#FFFFFF</dd></div>
+              <div><dt>RGB</dt><dd>255 255 255</dd></div>
+              <div><dt>CMYK</dt><dd>0 0 0 0</dd></div>
+              <div><dt>Token</dt><dd><code>--color-white</code></dd></div>
+            </dl>
+          </div>
+        </article></div>
+    <p class="nota bloque">Los valores CMYK son referenciales, calculados por conversión directa.
+    Antes de imprimir hay que perfilarlos con el proveedor sobre el papel real.</p>
+
+    <div class="bloque">
+      <h4>Contraste comprobado</h4>
+      <p>Medido según WCAG 2.1. «Texto grande» es a partir de 24 px, o 18.66 px en negrita.</p>
+      <div class="tabla-scroll">
+        <table>
+          <thead><tr><th>Texto</th><th>Fondo</th><th>Ratio</th><th>Normal</th><th>Grande</th><th>Veredicto</th></tr></thead>
+          <tbody>
+          <tr>
+            <td>Azul marino</td>
+            <td>Blanco</td>
+            <td class="num">14.35:1</td>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td><span class="pill pill--ok">Aprobado</span></td>
+          </tr>
+          <tr>
+            <td>Blanco</td>
+            <td>Azul marino</td>
+            <td class="num">14.35:1</td>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td><span class="pill pill--ok">Aprobado</span></td>
+          </tr>
+          <tr>
+            <td>Rojo atoq</td>
+            <td>Blanco</td>
+            <td class="num">6.34:1</td>
+            <td>AA</td>
+            <td>AAA</td>
+            <td><span class="pill pill--ok">Aprobado</span></td>
+          </tr>
+          <tr>
+            <td>Blanco</td>
+            <td>Rojo atoq</td>
+            <td class="num">6.34:1</td>
+            <td>AA</td>
+            <td>AAA</td>
+            <td><span class="pill pill--ok">Aprobado</span></td>
+          </tr>
+          <tr>
+            <td>Azul soporte</td>
+            <td>Blanco</td>
+            <td class="num">4.61:1</td>
+            <td>AA</td>
+            <td>AAA</td>
+            <td><span class="pill pill--ok">Aprobado</span></td>
+          </tr>
+          <tr>
+            <td>Azul marino</td>
+            <td>Gris fondo</td>
+            <td class="num">11.28:1</td>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td><span class="pill pill--ok">Aprobado</span></td>
+          </tr>
+          <tr>
+            <td>Rojo atoq</td>
+            <td>Azul marino</td>
+            <td class="num">2.26:1</td>
+            <td>—</td>
+            <td>—</td>
+            <td><span class="pill pill--falla">No usar</span></td>
+          </tr></tbody>
+        </table>
+      </div>
+      <p class="nota bloque"><strong>Rojo sobre azul marino no se usa nunca para texto:</strong> 2.26:1,
+      muy por debajo del mínimo de 4.5:1. Sí es válido como forma — un botón rojo sobre un panel
+      azul funciona, siempre que su texto vaya en blanco.</p>
+    </div>
+  </section>
+
+  <!-- ============================================ 04 -->
+  <section id="tipografia">
+    <header class="sec__cab">
+      <p class="sec__num">04 · Tipografía</p>
+      <h2>Montserrat</h2>
+      <p class="lead">Una sola familia para todo. Geométrica, de origen porteño y con licencia
+    abierta (SIL OFL): se puede instalar, incrustar y distribuir sin pagar nada.</p>
+    </header>
+    <div class="espec bloque">
+      <p class="espec__abc">ABCDEFGHIJKLMNÑOPQRSTUVWXYZ<br />abcdefghijklmnñopqrstuvwxyz<br />0123456789 ¿? ¡! · @ % &amp; €</p>
+      <dl class="pesos">
+        <div><dt>Regular · 400</dt><dd style="font-weight:400">Corte láser de fibra</dd></div>
+        <div><dt>Medium · 500</dt><dd style="font-weight:500">Corte láser de fibra</dd></div>
+        <div><dt>SemiBold · 600</dt><dd style="font-weight:600">Corte láser de fibra</dd></div>
+        <div><dt>Bold · 700</dt><dd style="font-weight:700">Corte láser de fibra</dd></div>
+        <div><dt>ExtraBold · 800</dt><dd style="font-weight:800">Corte láser de fibra</dd></div>
+      </dl>
+    </div>
+
+    <div class="bloque">
+      <h4>Escala</h4>
+      <div class="espec escala">
+        <div><b>Display · 48/60 · 700</b><span style="font-size:48px;line-height:1.25;font-weight:700">Titular mayor</span></div>
+        <div><b>H1 · 40/48 · 700</b><span style="font-size:40px;line-height:1.2;font-weight:700">Titular de portada</span></div>
+        <div><b>H2 · 32/40 · 700</b><span style="font-size:32px;line-height:1.25;font-weight:700">Título de sección</span></div>
+        <div><b>H3 · 24/30 · 700</b><span style="font-size:24px;line-height:1.25;font-weight:700">Título de tarjeta</span></div>
+        <div><b>Destacado · 20/28 · 500</b><span style="font-size:20px;line-height:1.4;font-weight:500">Párrafo de entrada</span></div>
+        <div><b>Texto · 16/24 · 500</b><span style="font-size:16px;line-height:1.5;font-weight:500">Texto corrido y navegación</span></div>
+        <div><b>Botón · 16/20 · 700</b><span style="font-size:16px;line-height:1.25;font-weight:700">Cotizar gratis</span></div>
+        <div><b>Bajada · 9 · 600 · +19%</b><span style="font-size:11px;font-weight:600;letter-spacing:.19em">MANUFACTURA DE PRECISIÓN</span></div>
+      </div>
+      <p class="nota bloque">La bajada del logo es el único texto con tracking abierto. En el resto
+      de la comunicación el espaciado va normal, o ligeramente cerrado en los titulares grandes.</p>
+    </div>
+  </section>
+
+  <!-- ============================================ 05 -->
+  <section id="redes">
+    <header class="sec__cab">
+      <p class="sec__num">05 · Redes sociales</p>
+      <h2>Piezas listas</h2>
+      <p class="lead">Todo lo de abajo está exportado a su medida exacta en <code>redes/png/</code>.
+    Se sube tal cual, sin reescalar: reescalar es lo que emborrona el logo.</p>
+    </header>
+    <div class="grid g2 bloque">
+        <article class="pieza">
+          <img src="redes/png/avatar-azul.png" alt="Foto de perfil" loading="lazy" />
+          <div class="pieza__datos">
+            <h3>Foto de perfil</h3>
+            <p class="pieza__donde">Instagram · Facebook · LinkedIn · X</p>
+            <p class="pieza__medida">1080 × 1080 px</p>
+            <p class="pieza__nota">Versión azul por defecto. Todas las redes la recortan en círculo, por eso el isotipo ocupa solo el 46%.</p>
+          </div>
+        </article>
+        <article class="pieza">
+          <img src="redes/png/avatar-rojo.png" alt="Foto de perfil alterna" loading="lazy" />
+          <div class="pieza__datos">
+            <h3>Foto de perfil alterna</h3>
+            <p class="pieza__donde">Cuando el feed es oscuro</p>
+            <p class="pieza__medida">1080 × 1080 px</p>
+            <p class="pieza__nota">Fondo rojo atoq. Misma construcción.</p>
+          </div>
+        </article>
+        <article class="pieza">
+          <img src="redes/png/avatar-blanco.png" alt="Foto de perfil clara" loading="lazy" />
+          <div class="pieza__datos">
+            <h3>Foto de perfil clara</h3>
+            <p class="pieza__donde">Directorios y fondos oscuros</p>
+            <p class="pieza__medida">1080 × 1080 px</p>
+            <p class="pieza__nota">Única versión donde el isotipo va a dos tintas.</p>
+          </div>
+        </article>
+        <article class="pieza">
+          <img src="redes/png/avatar-whatsapp.png" alt="WhatsApp Business" loading="lazy" />
+          <div class="pieza__datos">
+            <h3>WhatsApp Business</h3>
+            <p class="pieza__donde">Perfil de empresa</p>
+            <p class="pieza__medida">640 × 640 px</p>
+            <p class="pieza__nota">WhatsApp comprime fuerte: por eso va la versión sólida, sin kerf.</p>
+          </div>
+        </article>
+        <article class="pieza">
+          <img src="redes/png/portada-facebook.png" alt="Portada Facebook" loading="lazy" />
+          <div class="pieza__datos">
+            <h3>Portada Facebook</h3>
+            <p class="pieza__donde">Página de empresa</p>
+            <p class="pieza__medida">1640 × 856 px</p>
+            <p class="pieza__nota">Área segura de 820 × 312 al centro: en escritorio se recorta a eso.</p>
+          </div>
+        </article>
+        <article class="pieza">
+          <img src="redes/png/portada-linkedin-empresa.png" alt="Portada LinkedIn" loading="lazy" />
+          <div class="pieza__datos">
+            <h3>Portada LinkedIn</h3>
+            <p class="pieza__donde">Página de empresa</p>
+            <p class="pieza__medida">1128 × 191 px</p>
+            <p class="pieza__nota">Banda muy baja. El logo va al centro porque el avatar tapa la esquina inferior izquierda.</p>
+          </div>
+        </article>
+        <article class="pieza">
+          <img src="redes/png/portada-linkedin-personal.png" alt="Fondo LinkedIn" loading="lazy" />
+          <div class="pieza__datos">
+            <h3>Fondo LinkedIn</h3>
+            <p class="pieza__donde">Perfil personal</p>
+            <p class="pieza__medida">1584 × 396 px</p>
+            <p class="pieza__nota">Para el perfil de quien represente a la empresa.</p>
+          </div>
+        </article>
+        <article class="pieza">
+          <img src="redes/png/portada-x.png" alt="Encabezado X" loading="lazy" />
+          <div class="pieza__datos">
+            <h3>Encabezado X</h3>
+            <p class="pieza__donde">Perfil de X</p>
+            <p class="pieza__medida">1500 × 500 px</p>
+            <p class="pieza__nota">El avatar tapa la esquina inferior izquierda.</p>
+          </div>
+        </article>
+        <article class="pieza">
+          <img src="redes/png/portada-youtube.png" alt="Banner YouTube" loading="lazy" />
+          <div class="pieza__datos">
+            <h3>Banner YouTube</h3>
+            <p class="pieza__donde">Canal</p>
+            <p class="pieza__medida">2560 × 1440 px</p>
+            <p class="pieza__nota">Área segura de 1546 × 423: es lo único que se ve en móvil.</p>
+          </div>
+        </article>
+        <article class="pieza">
+          <img src="redes/png/post-instagram.png" alt="Post de marca" loading="lazy" />
+          <div class="pieza__datos">
+            <h3>Post de marca</h3>
+            <p class="pieza__donde">Instagram · Facebook</p>
+            <p class="pieza__medida">1080 × 1080 px</p>
+            <p class="pieza__nota">Plantilla para anuncios y presentaciones de marca.</p>
+          </div>
+        </article>
+        <article class="pieza">
+          <img src="redes/png/historia-instagram.png" alt="Historia" loading="lazy" />
+          <div class="pieza__datos">
+            <h3>Historia</h3>
+            <p class="pieza__donde">Instagram · Facebook · WhatsApp</p>
+            <p class="pieza__medida">1080 × 1920 px</p>
+            <p class="pieza__nota">Deja libres los 250 px de arriba y abajo: ahí van los controles de la app.</p>
+          </div>
+        </article>
+        <article class="pieza">
+          <img src="redes/png/open-graph.png" alt="Vista previa de enlace" loading="lazy" />
+          <div class="pieza__datos">
+            <h3>Vista previa de enlace</h3>
+            <p class="pieza__donde">Al compartir la web</p>
+            <p class="pieza__medida">1200 × 630 px</p>
+            <p class="pieza__nota">Open Graph. Ya está montada en el sitio web.</p>
+          </div>
+        </article></div>
+    <div class="bloque">
+      <h4>Reglas al publicar</h4>
+      <div class="grid g2">
+        <div><h3>El avatar no cambia</h3><p class="nota">Misma foto de perfil en todas las redes. Es lo que hace que te reconozcan en un feed, y cambiarla rompe ese reconocimiento.</p></div>
+        <div><h3>Subir PNG, no JPG</h3><p class="nota">El logo tiene bordes rectos y áreas planas: el JPG los ensucia con artefactos. PNG en todas las piezas de marca.</p></div>
+        <div><h3>Respetar el área segura</h3><p class="nota">Cada red recorta distinto en móvil y en escritorio. Las piezas ya lo contemplan; si haces una nueva, deja el contenido al centro.</p></div>
+        <div><h3>Nunca reconstruir el logo</h3><p class="nota">No se reescribe «atoqlab» con la fuente ni se recorta de una captura. Siempre se parte del SVG.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ 06 -->
+  <section id="archivos">
+    <header class="sec__cab">
+      <p class="sec__num">06 · Archivos</p>
+      <h2>Qué hay y para qué</h2>
+      <p class="lead">Usa siempre el <strong>SVG</strong>: es vectorial, pesa poco y no se pixela nunca.
+    El PNG solo donde no acepten SVG.</p>
+    </header>
+    <div class="arbol bloque">
+<b>atoqlab-marca/</b>
+├── <b>manual-de-marca.html</b>   <i>este documento (imprimir a PDF desde el navegador)</i>
+├── <b>logos/</b>
+│   ├── <b>svg/</b>                <i>29 archivos · el original de todo</i>
+│   └── <b>png/</b>                <i>@1000 y @2000 px, fondo transparente</i>
+│       └── <b>favicon/</b>        <i>16 a 512 px</i>
+├── <b>redes/</b>
+│   ├── <b>svg/</b>                <i>editables, por si hay que ajustar una medida</i>
+│   └── <b>png/</b>                <i>listos para subir, tamaño exacto</i>
+├── <b>paleta/</b>
+│   ├── tokens.css           <i>variables CSS</i>
+│   ├── tokens.json          <i>hex, RGB, CMYK y contraste</i>
+│   ├── atoqlab.ase          <i>muestras para Illustrator y Photoshop</i>
+│   └── atoqlab.gpl          <i>muestras para Inkscape y GIMP</i>
+├── <b>fuentes/</b>               <i>Montserrat variable (TTF y WOFF2), licencia SIL OFL</i>
+├── <b>impresos/</b>              <i>material promocional; ver impresos/README.md</i>
+│   ├── <b>pdf/rgb/</b>           <i>lo que se manda a la imprenta</i>
+│   ├── <b>pdf/cmyk/</b>          <i>solo si la imprenta lo exige</i>
+│   ├── <b>png/</b>               <i>300 dpi, y las piezas para redes</i>
+│   ├── <b>piezas/</b>            <i>los HTML de origen, editables</i>
+│   └── <b>fotos/</b>             <i>JPG a máxima resolución + tabla de límites</i>
+└── <b>scripts/</b>               <i>generan todo lo anterior; ver README.md</i>
+    </div>
+    <div class="grid g2 bloque">
+      <div><h3>Nomenclatura</h3><p class="nota"><code>atoqlab-{versión}-{color}.svg</code>. Versión: horizontal, compacto, vertical, isotipo, wordmark. Color: color, blanco, azul, rojo, negro.</p></div>
+      <div><h3>Regenerar</h3><p class="nota">Todo sale de scripts. Si cambia un color en <code>scripts/paleta.py</code>, se vuelven a correr y se actualizan logos, piezas de redes y este manual.</p></div>
+    </div>
+  </section>
+
+  </main>
+</div>
+
+<footer>
+  <img src="logos/svg/atoqlab-horizontal-blanco.svg" alt="atoqlab" />
+  <p>Manual de marca versión 1.0 preliminar · 06.09.2026. La identidad es provisional:
+  sirve para trabajar y visualizar, y está pensada para revisarse.</p>
+</footer>
+
+</body>
+</html>

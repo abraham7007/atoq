@@ -1,0 +1,106 @@
+<!doctype html><html lang="es-PE"><head><meta charset="utf-8">
+<title>atoqlab · Volante A5</title>
+<link rel="stylesheet" href="print.css">
+<style>
+  @page{size:154mm 216mm;margin:0}
+  .pieza{--w:148mm;--h:210mm}
+  h1{font-size:30pt;margin-top:12mm}
+  .zorro{width:130mm;right:-44mm;top:60mm}
+  .cabecera img{width:44mm}
+  .lead{font-size:10.5pt;margin-top:6mm;opacity:.88}
+  .bullets{list-style:none;margin-top:7mm;display:grid;gap:3mm}
+  .bullets li{font-size:10pt;font-weight:600;padding-left:7mm;position:relative;line-height:1.3}
+  .bullets li::before{content:"";position:absolute;left:0;top:1.5mm;width:3.4mm;height:3.4mm;
+    background:var(--brand);transform:rotate(45deg)}
+  .fotos-a{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-top:7mm}
+  .fotos-a .foto{aspect-ratio:3/2;border-radius:1.5mm}
+  .cierre{margin-top:auto;display:flex;justify-content:space-between;align-items:flex-end;gap:6mm}
+  .cierre .qr p{color:#fff;opacity:.85}
+
+  /* ---- reverso ---- */
+  .rev h2{margin-top:0}
+  .rev .bloque{margin-top:6mm}
+  .rev h3{color:var(--brand);margin-bottom:2.5mm}
+  .pasos{list-style:none;counter-reset:p;display:grid;gap:4mm;margin-top:3mm}
+  .pasos li{counter-increment:p;position:relative;padding-left:10mm;font-size:10.2pt;line-height:1.4;font-weight:500}
+  .pasos li::before{content:"0" counter(p);position:absolute;left:0;top:-0.5mm;
+    font-size:11pt;font-weight:800;color:var(--brand)}
+  .pasos b{display:block;font-size:10pt}
+  .mats{display:grid;grid-template-columns:1fr 1fr;gap:2mm 5mm;margin-top:3mm}
+  .mats span{font-size:10.2pt;font-weight:600;border-top:.3mm solid var(--ash-dark);padding-top:1.6mm}
+  .fotos-rev{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-top:5mm}
+  .fotos-rev .foto{aspect-ratio:4/3;border-radius:1.5mm}
+  .contacto-rev{margin-top:auto;background:var(--navy);color:#fff;padding:6mm;border-radius:2mm;
+    display:flex;justify-content:space-between;align-items:center;gap:5mm}
+  .contacto-rev p{font-size:9.7pt;line-height:1.5;font-weight:600}
+  .contacto-rev b{font-size:12pt;display:block}
+  .contacto-rev img{width:19mm;height:19mm}
+</style></head><body>
+
+<!-- ============ cara A ============ -->
+<section class="pieza pieza--navy">
+  <img class="zorro" src="../../logos/svg/atoqlab-isotipo-solido-blanco.svg" alt="">
+  <div class="filete" style="height:4mm"></div>
+  <div class="seguro">
+    <header class="cabecera"><img src="../../logos/svg/atoqlab-horizontal-blanco.svg" alt="atoqlab"></header>
+    <h1>Habilitado y conformado de plancha.</h1>
+    <p class="lead">Mándanos el plano. Te devolvemos la pieza habilitada,
+    conformada y lista para montar.</p>
+    <ul class="bullets">
+      <li>Acero al carbono, inoxidable, aluminio y galvanizada</li>
+      <li>Plancha de hasta 20 mm de espesor</li>
+      <li>Plegado de hasta 3200 mm, con 130 toneladas</li>
+      <li>Desde una sola pieza, sin pedido mínimo</li>
+      <li>Cotización gratis en menos de 24 horas</li>
+    </ul>
+    <div class="fotos-a">
+      <div class="foto"><img src="../fotos/laser-dxtech.jpg" alt=""></div>
+      <div class="foto"><img src="../fotos/plancha-perforada.jpg" alt=""></div>
+    </div>
+    <div class="cierre">
+      <div>
+        <span class="pastilla">Cotiza gratis</span>
+        <div class="qr" style="margin-top:6mm">
+          <img src="qr/whatsapp-blanco.svg" alt="">
+          <p><b>+51 999 888 777</b><br>Escanea y escríbenos</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ cara B ============ -->
+<section class="pieza rev">
+  <div class="filete" style="height:4mm"></div>
+  <div class="seguro">
+    <p class="eyebrow">Cómo funciona</p>
+    <h2 style="margin-top:3mm">Cómo pedir un trabajo</h2>
+    <ol class="pasos">
+      <li><b>Manda el plano</b>En DXF, DWG o PDF. Si solo tienes una foto de la pieza vieja, también sirve.</li>
+      <li><b>Aprueba la cotización</b>Con el precio cerrado y la fecha de entrega. Si quieres, compramos la plancha.</li>
+      <li><b>Recoge o te la enviamos</b>A tu obra o taller en Lima, y a provincias por agencia.</li>
+    </ol>
+
+    <div class="bloque">
+      <h3>Materiales</h3>
+      <div class="mats">
+        <span>Acero al carbono</span><span>Acero inoxidable</span>
+        <span>Aluminio</span><span>Plancha galvanizada</span>
+      </div>
+    </div>
+
+    <div class="fotos-rev">
+      <div class="foto"><img src="../fotos/piezas-cortadas.jpg" alt=""></div>
+      <div class="foto"><img src="../fotos/plancha-perforada.jpg" alt=""></div>
+    </div>
+
+    <div class="contacto-rev">
+      <p><b>atoqlab.pe</b>
+      Av. Caminos del Inca 2589, Santiago de Surco<br>
+      contacto@atoqlab.pe · (01) 748 5520<br>
+      Lun a Vie 8:00–18:00 · Sáb 8:00–13:00</p>
+      <img src="qr/web-blanco.svg" alt="">
+    </div>
+  </div>
+</section>
+</body></html>

@@ -1,0 +1,175 @@
+<!doctype html><html lang="es-PE"><head><meta charset="utf-8">
+<title>atoqlab · Tríptico A4</title>
+<link rel="stylesheet" href="print.css">
+<style>
+  @page{size:303mm 216mm;margin:0}
+  .pieza{--w:297mm;--h:210mm}
+  /* Plegado en Z (acordeón): tres paneles iguales de 99 mm.
+     Los pliegues caen a 99 mm y 198 mm del borde de recorte. */
+  .seguro{flex-direction:row;inset:calc(var(--sangrado) + 4mm);gap:0}
+  .panel{width:calc((297mm - 8mm)/3);padding:5mm;display:flex;flex-direction:column}
+  .panel + .panel{border-left:.25mm solid rgba(128,128,128,.28)}
+  .pieza--navy .panel + .panel{border-left-color:rgba(255,255,255,.22)}
+
+  h2{font-size:16pt}
+  h3{font-size:10.5pt;color:var(--brand);margin-bottom:2mm}
+  p{font-size:9.8pt;line-height:1.5}
+  .mini{font-size:8.6pt}
+
+  /* portada */
+  .portada{justify-content:space-between}
+  .portada img.logo{width:52mm}
+  .portada h1{font-size:27pt;line-height:1.05}
+  .portada .foto{aspect-ratio:1;border-radius:1.5mm;margin-top:5mm}
+
+  .lista{list-style:none;display:grid;gap:2.4mm;margin-top:3mm}
+  .lista li{font-size:9.8pt;font-weight:600;padding-left:5.5mm;position:relative;line-height:1.35}
+  .lista li::before{content:"";position:absolute;left:0;top:1.2mm;width:2.6mm;height:2.6mm;
+    background:var(--brand);transform:rotate(45deg)}
+
+  .specs{display:grid;gap:3mm;margin-top:4mm}
+  .specs div{border-top:.3mm solid var(--ash-dark);padding-top:2mm}
+  .specs b{display:block;font-size:12pt;font-weight:800;line-height:1.1}
+  .specs span{font-size:8.2pt;font-weight:600;letter-spacing:.09em;text-transform:uppercase;opacity:.65}
+
+  .pasos{list-style:none;counter-reset:p;display:grid;gap:3.4mm;margin-top:3mm}
+  .pasos li{counter-increment:p;position:relative;padding-left:8mm;
+    font-size:9.8pt;line-height:1.45;font-weight:500}
+  .pasos li::before{content:"0" counter(p);position:absolute;left:0;top:-.4mm;
+    font-size:10pt;font-weight:800;color:var(--brand)}
+  .pasos b{display:block;font-size:10.2pt}
+
+  .ind{display:grid;gap:3mm;margin-top:3mm}
+  .ind .foto{aspect-ratio:2/1;border-radius:1.5mm;margin-bottom:1.6mm}
+
+  /* contraportada */
+  .cierre{justify-content:space-between}
+  .cierre img.logo{width:46mm}
+  .cierre .qr img{width:26mm;height:26mm}
+  .datos-c{font-size:10.2pt;line-height:1.6;font-weight:600}
+  .datos-c b{font-size:13pt;display:block;margin-bottom:1.5mm}
+</style></head><body>
+
+<!-- ================= CARA EXTERIOR ================= -->
+<section class="pieza pieza--navy">
+  <div class="seguro">
+
+    <!-- panel 1 · portada -->
+    <div class="panel portada">
+      <img class="logo" src="../../logos/svg/atoqlab-horizontal-blanco.svg" alt="atoqlab">
+      <div>
+        <p class="eyebrow eyebrow--claro" style="margin-bottom:4mm">Habilitado y conformado</p>
+        <h1>Plancha cortada y conformada al milímetro.</h1>
+        <div class="foto"><img src="../fotos/laser-dxtech.jpg" alt=""></div>
+      </div>
+      <p class="mini" style="opacity:.7">atoqlab.pe · Santiago de Surco, Lima</p>
+    </div>
+
+    <!-- panel 2 · qué cortamos -->
+    <div class="panel">
+      <h2>Qué hacemos</h2>
+      <p style="margin-top:3mm;opacity:.85">Cortamos en la láser DXTECH y doblamos
+      en prensa de 130 toneladas. La pieza no cambia de taller entre una operación
+      y la otra.</p>
+      <h3 style="margin-top:6mm">Materiales</h3>
+      <ul class="lista">
+        <li>Acero al carbono e inoxidable</li>
+        <li>Aluminio</li>
+        <li>Plancha galvanizada</li>
+        <li>Otros bajo consulta</li>
+      </ul>
+      <h3 style="margin-top:6mm">Aplicaciones</h3>
+      <ul class="lista">
+        <li>Piezas de máquina y repuestos</li>
+        <li>Bandejas portacables</li>
+        <li>Encofrados metálicos</li>
+        <li>Prototipos y series cortas</li>
+      </ul>
+    </div>
+
+    <!-- panel 3 · capacidades -->
+    <div class="panel">
+      <h2>Capacidad</h2>
+      <div class="specs">
+        <div><b>Hasta 20 mm</b><span>Espesor de plancha</span></div>
+        <div><b>Desde 5 mm</b><span>Diámetro de perforación</span></div>
+        <div><b>3200 mm</b><span>Longitud de plegado</span></div>
+        <div><b>130 t</b><span>Fuerza de plegado</span></div>
+        <div><b>± 0.1 mm</b><span>Tolerancia típica</span></div>
+      </div>
+      <div class="foto" style="aspect-ratio:1;border-radius:1.5mm;margin-top:auto">
+        <img src="../fotos/piezas-cortadas.jpg" alt="">
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= CARA INTERIOR ================= -->
+<section class="pieza">
+  <div class="filete" style="height:4mm"></div>
+  <div class="seguro">
+
+    <!-- panel 4 · cómo funciona -->
+    <div class="panel">
+      <p class="eyebrow">El proceso</p>
+      <h2 style="margin-top:2mm">Cómo pedir un trabajo</h2>
+      <ol class="pasos">
+        <li><b>Envíanos tu plano</b>En DXF, DWG o PDF, a escala 1:1 y con las curvas
+        cerradas. Si solo tienes un boceto o una foto, lo digitalizamos nosotros.</li>
+        <li><b>Aprueba la cotización</b>Llega en menos de 24 horas hábiles con el precio
+        cerrado y la fecha de entrega. Si quieres, compramos la materia prima por ti.</li>
+        <li><b>Recibe la pieza</b>En tu taller, en tu domicilio o recógela aquí. Cada
+        pedido sale con verificación dimensional.</li>
+      </ol>
+      <h3 style="margin-top:6mm">Sin pedido mínimo</h3>
+      <p>Trabajamos desde una sola pieza. El precio por unidad baja conforme sube la cantidad.</p>
+    </div>
+
+    <!-- panel 5 · industrias -->
+    <div class="panel">
+      <p class="eyebrow">Dónde se usa</p>
+      <h2 style="margin-top:2mm">Industrias</h2>
+      <div class="ind">
+        <div>
+          <div class="foto"><img src="../fotos/bandejas-apiladas.jpg" alt=""></div>
+          <h3>Bandejas portacables</h3>
+          <p>Tramos, curvas y accesorios, por metro lineal.</p>
+        </div>
+        <div>
+          <div class="foto"><img src="../fotos/encofrados-taller.jpg" alt=""></div>
+          <h3>Encofrados metálicos</h3>
+          <p>Paneles y encofrados de columna para obra.</p>
+        </div>
+        <div>
+          <div class="foto"><img src="../fotos/piezas-dobladas.jpg" alt=""></div>
+          <h3>Piezas a medida</h3>
+          <p>Bases, refuerzos, tapas, soportes y ductos.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- panel 6 · contraportada -->
+    <div class="panel cierre">
+      <div>
+        <img class="logo" src="../../logos/svg/atoqlab-horizontal-color.svg" alt="atoqlab">
+        <p style="margin-top:6mm;opacity:.85">Cotiza gratis. Mándanos tu plano por
+        WhatsApp y te respondemos con precio y fecha en menos de 24 horas hábiles.</p>
+      </div>
+      <div class="qr" style="align-items:flex-start">
+        <img src="qr/whatsapp.svg" alt="">
+        <p class="mini"><strong>Escanea</strong><br>y escríbenos<br>por WhatsApp</p>
+      </div>
+      <div class="datos-c">
+        <b>+51 999 888 777</b>
+        Av. Caminos del Inca 2589<br>
+        Santiago de Surco, Lima<br>
+        contacto@atoqlab.pe<br>
+        (01) 748 5520<br>
+        <span style="opacity:.7">Lun a Vie 8:00–18:00<br>Sáb 8:00–13:00</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+</body></html>

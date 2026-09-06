@@ -1,0 +1,50 @@
+<!doctype html><html lang="es-PE"><head><meta charset="utf-8">
+<title>atoqlab · Tarjeta</title>
+<link rel="stylesheet" href="print.css">
+<style>
+  @page{size:96mm 56mm;margin:0}
+  .pieza{--w:90mm;--h:50mm}
+  .seguro{inset:calc(var(--sangrado) + 3.6mm)}
+  .zorro{width:62mm;right:-21mm;top:-6mm}
+  .frente{justify-content:center;align-items:center}
+  /* 46 mm de ancho = 39.5 mm de alto: cabe en los 42.8 mm utiles de la tarjeta */
+  .frente img{width:46mm}
+  .rev{justify-content:space-between}
+  .rev .cab{display:flex;justify-content:space-between;align-items:flex-start;gap:4mm}
+  .rev .cab img.logo{width:34mm}
+  .rev .qr img{width:15mm;height:15mm}
+  .nombre b{display:block;font-size:11pt;font-weight:800;line-height:1.15}
+  .nombre span{font-size:8.2pt;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--brand)}
+  .datos{font-size:8.4pt;line-height:1.5;font-weight:600}
+  .datos b{font-size:10.2pt}
+</style></head><body>
+
+<!-- frente -->
+<section class="pieza pieza--navy">
+  <img class="zorro" src="../../logos/svg/atoqlab-isotipo-solido-blanco.svg" alt="">
+  <div class="seguro frente">
+    <img src="../../logos/svg/atoqlab-vertical-blanco.svg" alt="atoqlab">
+  </div>
+</section>
+
+<!-- reverso -->
+<section class="pieza rev">
+  <div class="filete" style="height:2.4mm"></div>
+  <div class="seguro rev">
+    <div class="cab">
+      <img class="logo" src="../../logos/svg/atoqlab-compacto-color.svg" alt="atoqlab">
+      <div class="qr"><img src="qr/whatsapp.svg" alt=""></div>
+    </div>
+    <div class="nombre">
+      <!-- TODO nombre y cargo reales -->
+      <b>Nombre Apellido</b>
+      <span>Jefe de operaciones</span>
+    </div>
+    <div class="datos">
+      <b>+51 999 888 777</b>
+      contacto@atoqlab.pe · atoqlab.pe<br>
+      Av. Caminos del Inca 2589, Santiago de Surco, Lima
+    </div>
+  </div>
+</section>
+</body></html>

@@ -1,0 +1,12 @@
+/* Tokens de color de atoqlab. Generado por scripts/paleta.py */
+:root {
+  --color-navy: #192851;
+  --color-blue: #4A70D4;
+  --color-brand: #B92222;
+  --color-brand-400: #D63E3E;
+  --color-danger: #E32529;
+  --color-success: #31CF6E;
+  --color-ash: #E4E4E4;
+  --color-ash-dark: #C6C6C6;
+  --color-white: #FFFFFF;
+}

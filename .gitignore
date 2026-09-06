@@ -1,0 +1,10 @@
+node_modules/
+.venv/
+.DS_Store
+
+# Generados y regenerables. Se dejan fuera para no cargar el repo con 53 MB
+# de binarios que cambian en cada exportación:
+#   node impresos/scripts/exportar.mjs   -> impresos/png
+#   node impresos/scripts/cmyk.mjs       -> impresos/pdf/cmyk
+impresos/pdf/cmyk/
+impresos/png/

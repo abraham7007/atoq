@@ -1,0 +1,39 @@
+<!doctype html><html lang="es-PE"><head><meta charset="utf-8">
+<title>atoqlab · Hoja membretada A4</title>
+<link rel="stylesheet" href="print.css">
+<style>
+  @page{size:216mm 303mm;margin:0}
+  .pieza{--w:210mm;--h:297mm;background:#fff}
+  .seguro{inset:calc(var(--sangrado) + 14mm)}
+  .cabecera{display:flex;justify-content:space-between;align-items:flex-start;
+    border-bottom:.4mm solid var(--ash-dark);padding-bottom:5mm}
+  .cabecera img{width:46mm}
+  .cabecera .meta{text-align:right;font-size:8.8pt;line-height:1.5;font-weight:600;color:#54617F}
+  .cuerpo{flex:1;padding-top:10mm}
+  .cuerpo p{color:#8F98AC;font-style:italic}
+  .pie{border-top:.4mm solid var(--ash-dark);padding-top:4mm;
+    display:flex;justify-content:space-between;gap:6mm;font-size:8.6pt;font-weight:600;color:#54617F}
+  .banda{position:absolute;left:0;top:0;bottom:0;width:6mm;background:var(--navy)}
+  .banda::after{content:"";position:absolute;left:0;right:0;bottom:0;height:34%;background:var(--brand)}
+</style></head><body>
+
+<section class="pieza">
+  <div class="banda"></div>
+  <div class="seguro" style="left:calc(var(--sangrado) + 20mm)">
+    <header class="cabecera">
+      <img src="../../logos/svg/atoqlab-horizontal-color.svg" alt="atoqlab">
+      <div class="meta">
+        Av. Caminos del Inca 2589<br>
+        Santiago de Surco, Lima 15039<br>
+        (01) 748 5520 · +51 999 888 777<br>
+        contacto@atoqlab.pe · atoqlab.pe
+      </div>
+    </header>
+    <div class="cuerpo"><p>[ Área de escritura ]</p></div>
+    <footer class="pie">
+      <span>atoqLab S.A.C. · RUC 20XXXXXXXXX</span>
+      <span>Manufactura de precisión</span>
+    </footer>
+  </div>
+</section>
+</body></html>

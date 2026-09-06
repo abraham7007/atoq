@@ -1,0 +1,113 @@
+<!doctype html><html lang="es-PE"><head><meta charset="utf-8">
+<title>atoqlab · Ficha técnica</title>
+<link rel="stylesheet" href="print.css">
+<style>
+  @page{size:216mm 303mm;margin:0}
+  .pieza{--w:210mm;--h:297mm}
+  .seguro{inset:calc(var(--sangrado) + 10mm)}
+  .cabecera{display:flex;justify-content:space-between;align-items:flex-start;
+    border-bottom:.5mm solid var(--navy);padding-bottom:5mm}
+  .cabecera img{width:48mm}
+  .cabecera .t{text-align:right}
+  .cabecera h1{font-size:15pt;line-height:1.15}
+  .cabecera p{font-size:9.2pt;color:#54617F}
+
+  .intro{display:grid;grid-template-columns:1fr 46mm;gap:6mm;align-items:start;margin-top:4.5mm}
+  .intro p{font-size:9.6pt}
+  .intro .foto{aspect-ratio:1;border-radius:1.5mm}
+
+  h2{font-size:10.4pt;letter-spacing:.14em;text-transform:uppercase;color:var(--brand);
+    margin-top:3.8mm;margin-bottom:1.9mm}
+  table{width:100%;border-collapse:collapse;font-size:9.2pt}
+  th,td{text-align:left;padding:1.15mm 2.6mm;border-bottom:.25mm solid var(--ash-dark);vertical-align:top}
+  th{font-size:8.4pt;letter-spacing:.1em;text-transform:uppercase;color:#54617F;
+    border-bottom-width:.45mm;border-bottom-color:var(--navy)}
+  td:first-child{font-weight:700;width:52mm}
+  tr:last-child td{border-bottom:0}
+
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:0 10mm}
+  .nota{font-size:8.8pt;color:#54617F;margin-top:2.5mm}
+
+  .cierre{margin-top:4mm;background:var(--navy);color:#fff;border-radius:2mm;padding:5mm 6mm;
+    display:flex;justify-content:space-between;align-items:center;gap:6mm}
+  .cierre p{font-size:9.8pt;line-height:1.55;font-weight:600}
+  .cierre b{font-size:12pt;display:block}
+  .cierre img{width:22mm;height:22mm}
+  .rev{font-size:8.0pt;color:#8A93A8;margin-top:3mm;text-align:right}
+</style></head><body>
+
+<section class="pieza">
+  <div class="filete" style="height:4mm"></div>
+  <div class="seguro">
+
+    <header class="cabecera">
+      <img src="../../logos/svg/atoqlab-horizontal-color.svg" alt="atoqlab">
+      <div class="t">
+        <h1>Ficha técnica</h1>
+        <p>Habilitado y conformado · Láser DXTECH · Prensa 130 T / 3200 mm</p>
+      </div>
+    </header>
+
+    <div class="intro">
+      <p>Cortamos plancha en la láser DXTECH y la doblamos en una prensa de 130
+      toneladas, sin que la pieza salga del taller. Eso quita el traslado a un
+      tercero y quita también la discusión sobre quién falló cuando una medida no
+      calza: la misma persona que programó el corte calcula el desarrollo del
+      doblez.</p>
+      <div class="foto"><img src="../fotos/laser-dxtech.jpg" alt="Máquina de corte láser DXTECH en el taller"></div>
+    </div>
+
+    <h2>Capacidad de corte</h2>
+    <table>
+      <tr><td>Espesor de plancha</td><td>0.5 – 20 mm según material</td></tr>
+      <tr><td>Área útil de corte</td><td>3000 × 1500 mm</td></tr>
+      <tr><td>Servicios</td><td>Corte láser y plegado, o solo uno de los dos</td></tr>
+      <tr><td>Diámetro de perforación</td><td>5 – 300 mm</td></tr>
+      <tr><td>Longitud de plegado</td><td>3200 mm · fuerza 130 toneladas</td></tr>
+      <tr><td>Tolerancia típica</td><td>± 0.1 mm</td></tr>
+      <tr><td>Ancho de corte (kerf)</td><td>0.1 – 0.4 mm según espesor</td></tr>
+    </table>
+    <p class="nota">TODO confirmar las cifras con la ficha del fabricante antes de imprimir.</p>
+
+    <div class="cols">
+      <div>
+        <h2>Materiales</h2>
+        <table>
+          <tr><td>Acero al carbono</td><td>0.5 – 20 mm</td></tr>
+          <tr><td>Acero inoxidable</td><td>0.5 – 12 mm</td></tr>
+          <tr><td>Aluminio</td><td>0.5 – 10 mm</td></tr>
+          <tr><td>Plancha galvanizada</td><td>Bajo consulta</td></tr>
+        </table>
+      </div>
+      <div>
+        <h2>Entrega de archivos</h2>
+        <table>
+          <tr><td>Formatos</td><td>DXF, DWG, PDF vectorial, AI, SVG</td></tr>
+          <tr><td>Escala</td><td>1:1, en milímetros</td></tr>
+          <tr><td>Trazos</td><td>Curvas cerradas, sin duplicados</td></tr>
+          <tr><td>Texto</td><td>Convertido a trazos</td></tr>
+          <tr><td>Sin vector</td><td>Digitalizamos por un costo adicional</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <h2>Plazos y condiciones</h2>
+    <table>
+      <tr><td>Cotización</td><td>Menos de 24 horas hábiles desde la recepción del archivo</td></tr>
+      <tr><td>Producción</td><td>2 a 3 días hábiles en trabajos pequeños · 5 a 7 en series medianas</td></tr>
+      <tr><td>Pedido mínimo</td><td>Ninguno. Se trabaja desde una sola pieza</td></tr>
+      <tr><td>Entrega</td><td>En taller o domicilio en Lima · Envío a provincias por agencia</td></tr>
+      <tr><td>Control</td><td>Verificación dimensional en cada pedido</td></tr>
+    </table>
+
+    <div class="cierre">
+      <p><b>+51 999 888 777</b>
+      Av. Caminos del Inca 2589, Santiago de Surco, Lima<br>
+      contacto@atoqlab.pe · atoqlab.pe · (01) 748 5520</p>
+      <img src="qr/whatsapp-blanco.svg" alt="">
+    </div>
+    <p class="rev">Rev. 1.0 preliminar · Datos sujetos a confirmación técnica</p>
+
+  </div>
+</section>
+</body></html>
